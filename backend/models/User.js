@@ -7,6 +7,8 @@ const sequelize = new Sequelize('specr','postgres','abcdef',
     dialect: 'postgres',
     host: 'localhost'
 })
+
+
 const Model = Sequelize.Model
 
 
@@ -25,4 +27,4 @@ User.init({
 
 
 module.exports = User
-sequelize.sync
+sequelize.sync()
