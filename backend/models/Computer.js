@@ -17,7 +17,6 @@ const Model = Sequelize.Model
 
 class Computer extends Model {}
 Computer.init({
-    info:{
         name: STRING,
         make: STRING,
         model: STRING,
@@ -27,20 +26,40 @@ Computer.init({
         img: STRING,
         type: STRING,
         size: STRING,
-        cpu:{
-            name: STRING,
-            tier: INTEGER
-        },
-        gpu:{
-            name:STRING,
-            tier: INTEGER
-        },
-        ram:{
-            amount: INTEGER,
-            unit: STRING,
-            type: STRING
-        },
-    },
+        cpuName: STRING,
+        gpuName: STRING,
+        cpuTier: INTEGER,
+        gpuTier: INTEGER,
+        ramAmount: INTEGER,
+        ramUnit: STRING,
+        ramType: STRING,
+        ishidden: BOOLEAN,
+        newegg: STRING,
+        uploadedby: STRING
+    // info:{
+    //     name: STRING,
+    //     make: STRING,
+    //     model: STRING,
+    //     OEMURL: STRING,
+    //     os: STRING,
+    //     msrp: INTEGER,
+    //     img: STRING,
+    //     type: STRING,
+    //     size: STRING,
+    //     cpu:{
+    //         name: STRING,
+    //         tier: INTEGER
+    //     },
+    //     gpu:{
+    //         name:STRING,
+    //         tier: INTEGER
+    //     },
+    //     ram:{
+    //         amount: INTEGER,
+    //         unit: STRING,
+    //         type: STRING
+    //     },
+    // },
     // CPUs:{
     //     name: STRING,
     //     tier: INTEGER
@@ -54,9 +73,7 @@ Computer.init({
     //     unit: STRING,
     //     type: STRING
     // },
-    ishidden: BOOLEAN,
-    newegg: STRING,
-    uploadedby: STRING
+
 },{
     sequelize,
     modelName: 'computer'

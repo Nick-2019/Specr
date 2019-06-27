@@ -33,30 +33,50 @@ const users = [
 
 const computers = [
     {
-        info:{
-            name: "Macbook Pro",
-            make: "Apple",
-            model: "MV912LL/A",
-            OEMURL: "https://www.apple.com/macbook-pro/specs/",
-            os: "OSX",
-            msrp: 2799,
-            img: "https://c1.neweggimages.com/ProductImageCompressAll1280/ABMT_1_201906181656126043.jpg",
-            type: "Laptop",
-            size: "15.6 Inch",
-            cpu:{
-                name: "Intel core i9",
-                tier: 6
-            },
-            gpu:{
-                name: "Radeon Pro 560X",
-                tier: 3
-            },
-            ram:{
-                amount: 16,
-                unit: "GB",
-                type: "DDR4"
-            },
-        },
+        name: "Macbook Pro 2019",
+        make: "Apple",
+        model: "MV912LL/A",
+        OEMURL: "https://www.apple.com/macbook-pro/specs/",
+        os: "Mac OS",
+        msrp: 2799,
+        img: "https://c1.neweggimages.com/ProductImageCompressAll1280/ABMT_1_201906181656126043.jpg",
+        type: "Laptop",
+        size: "15.6 Inches",
+        cpuName: "Intel Core i9",
+        gpuName: "Radeon Pro 560X",
+        cpuTier: 6,
+        gpuTier: 3,
+        ramAmount: 16,
+        ramUnit: "GB",
+        ramType: "DDR4",
+        ishidden: false,
+        newegg: "https://www.newegg.com/p/2SN-0001-01059?Description=macbook%20i9&cm_re=macbook_i9-_-9SIABMT9DY0338-_-Product",        
+        uploadedby: "MASTER"
+    }
+        // info:{
+        //     name: "Macbook Pro",
+        //     make: "Apple",
+        //     model: "MV912LL/A",
+        //     OEMURL: "https://www.apple.com/macbook-pro/specs/",
+        //     os: "OSX",
+        //     msrp: 2799,
+        //     img: "https://c1.neweggimages.com/ProductImageCompressAll1280/ABMT_1_201906181656126043.jpg",
+        //     type: "Laptop",
+        //     size: "15.6 Inch",
+        //     cpu:{
+        //         name: "Intel core i9",
+        //         tier: 6
+        //     },
+        //     gpu:{
+        //         name: "Radeon Pro 560X",
+        //         tier: 3
+        //     },
+        //     ram:{
+        //         amount: 16,
+        //         unit: "GB",
+        //         type: "DDR4"
+        //     },
+        // },
         // CPUs:{
         //     name: "Intel core i9",
         //     tier: 6
@@ -70,10 +90,10 @@ const computers = [
         //     unit: "GB",
         //     type: "DDR4"
         // },
-        ishidden: false,
-        newegg: "https://www.newegg.com/p/2SN-0001-01059?Description=macbook%20i9&cm_re=macbook_i9-_-9SIABMT9DY0338-_-Product",
-        uploadedby: "MASTER"
-    }
+        // ishidden: false,
+        // newegg: "https://www.newegg.com/p/2SN-0001-01059?Description=macbook%20i9&cm_re=macbook_i9-_-9SIABMT9DY0338-_-Product",
+        // uploadedby: "MASTER"
+    // }
     
 ]
 
