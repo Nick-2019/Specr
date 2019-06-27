@@ -1,13 +1,13 @@
 const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const BOOLEAN = Sequelize.BOOLEAN
-const Model = Sequelize.Model
 
 const sequelize = new Sequelize('specr','postgres','abcdef',
 {
     dialect: 'postgres',
     host: 'localhost'
 })
+const Model = Sequelize.Model
 
 
 class User extends Model {}

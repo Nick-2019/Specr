@@ -6,7 +6,7 @@ const User = require('./models/User')
 const Computer = require('./models/Computer')
 const Favorite = require('./models/Favorite')
 const Recommendation = require('./models/Recommendation')
-const Specs = require('./models/Specs')
+const Spec = require('./models/Spec')
 const Review = require('./models/Review')
 
 const app = express()

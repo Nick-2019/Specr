@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize')
 const INTEGER = Sequelize.INTEGER
-const Model = Sequelize.Model
 // const User = require('./User')
 // const Computer = require('./Computer')
 
@@ -13,6 +12,7 @@ const sequelize = new Sequelize('specr','postgres','abcdef',
 })
 
 
+const Model = Sequelize.Model
 
 class Recommendation extends Model{}
 
@@ -21,7 +21,7 @@ Recommendation.init({
     computerId: INTEGER
 },{
     sequelize,
-    modelName: 'Recommendation'
+    modelName: 'recommendation'
 })
 
 module.exports = Recommendation

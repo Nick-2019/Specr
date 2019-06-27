@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const INTEGER = Sequelize.INTEGER
-const Model = Sequelize.Model
 // const User = require('./User')
 
 
@@ -13,30 +12,27 @@ const sequelize = new Sequelize('specr','postgres','abcdef',
     host: 'localhost'
 })
 
+const Model = Sequelize.Model
 
-class Specs extends Model {}
 
-Specs.init({
-    CPU:{
-        name: STRING,
-        tier: INTEGER
-    },
-    GPU:{
-        name: STRING,
-        tier: INTEGER
-    },
-    RAM:{
-        amount: INTEGER,
-        unit: STRING
-    },
+
+class Spec extends Model {}
+
+Spec.init({
+    cpuName: STRING,
+    cpuTier: INTEGER,
+    gpuName: STRING,
+    gpuTier: INTEGER,
+    ramSize: INTEGER,
+    ramUnit: STRING,
+    // ramType: STRING,
     userId: INTEGER
 },{
     sequelize,
-    modelName: 'specs'
+    modelName: 'spec'
 })
-
 // Specs.belongsTo(User, {foreignKey: 'userId'})
 // User.hasMany(Specs, {as: 'specs', onDelete: 'cascade', hooks: true})
 
-module.exports = Specs
-sequelize.sync
+module.exports = Spec
+sequelize.sync()
