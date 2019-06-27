@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const INTEGER = Sequelize.INTEGER
-const Model = Sequelize.Model
 
 
 
@@ -11,6 +10,7 @@ const sequelize = new Sequelize('specr','postgres','abcdef',
     dialect: 'postgres',
     host: 'localhost'
 })
+const Model = Sequelize.Model
 
 class Favorite extends Model{}
 Favorite.init({
@@ -18,5 +18,8 @@ Favorite.init({
     computerId: INTEGER
 },{
     sequelize,
-    modelName: Favorite
+    modelName: "favorite"
 })
+
+module.exports = Favorite
+sequelize.sync()

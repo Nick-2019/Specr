@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const INTEGER = Sequelize.INTEGER
-const Model = Sequelize.Model
 
 
 
@@ -11,6 +10,7 @@ const sequelize = new Sequelize('specr','postgres','abcdef',
     dialect: 'postgres',
     host: 'localhost'
 })
+const Model = Sequelize.Model
 
 class Review extends Model{}
 
@@ -20,7 +20,7 @@ Review.init({
     computerId:INTEGER
 },{
     sequelize,
-    modelName: 'Review'
+    modelName: 'review'
 })
 
 module.exports = Review

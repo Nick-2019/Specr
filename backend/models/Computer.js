@@ -1,9 +1,8 @@
+const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const INTEGER = Sequelize.INTEGER
-const Model = Sequelize.Model
 const BOOLEAN = Sequelize.BOOLEAN
-const Sequelize = require('sequelize')
-const Recommendation = requre('./Recommendaton')
+// const Recommendation = require('./Recommendaton')
 
 
 
@@ -14,6 +13,7 @@ const sequelize = new Sequelize('specr','postgres','abcdef',
     dialect: 'postgres',
     host: 'localhost'
 })
+const Model = Sequelize.Model
 
 class Computer extends Model {}
 Computer.init({
@@ -26,21 +26,34 @@ Computer.init({
         msrp: INTEGER,
         img: STRING,
         type: STRING,
-        size: STRING
+        size: STRING,
+        cpu:{
+            name: STRING,
+            tier: INTEGER
+        },
+        gpu:{
+            name:STRING,
+            tier: INTEGER
+        },
+        ram:{
+            amount: INTEGER,
+            unit: STRING,
+            type: STRING
+        },
     },
-    CPU:{
-        name: STRING,
-        tier: INTEGER
-    },
-    GPU:{
-        name:STRING,
-        tier: INTEGER
-    },
-    RAM:{
-        amount: INTEGER,
-        unit: STRING,
-        type: STRING
-    },
+    // CPUs:{
+    //     name: STRING,
+    //     tier: INTEGER
+    // },
+    // GPU:{
+    //     name:STRING,
+    //     tier: INTEGER
+    // },
+    // RAM:{
+    //     amount: INTEGER,
+    //     unit: STRING,
+    //     type: STRING
+    // },
     ishidden: BOOLEAN,
     newegg: STRING,
     uploadedby: STRING
