@@ -1,7 +1,7 @@
+const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const BOOLEAN = Sequelize.BOOLEAN
 const Model = Sequelize.Model
-const Sequelize = require('sequelize')
 
 const sequelize = new Sequelize('specr','postgres','abcdef',
 {

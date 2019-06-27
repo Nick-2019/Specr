@@ -1,8 +1,8 @@
+const Sequelize = require('sequelize')
 const INTEGER = Sequelize.INTEGER
 const Model = Sequelize.Model
-const Sequelize = require('sequelize')
-const User = require('./User')
-const Computer = require('./Computer')
+// const User = require('./User')
+// const Computer = require('./Computer')
 
 
 

@@ -44,14 +44,14 @@ const computers = [
             type: "Laptop",
             size: "15.6 Inch"
         },
-        CPU:{
-            name: "Intel core i9",
-            tier: 6
-        },
-        GPU:{
-            name: "Radeon Pro 560X",
-            tier: 3
-        },
+        // CPUs:{
+        //     name: "Intel core i9",
+        //     tier: 6
+        // },
+        // GPU:{
+        //     name: "Radeon Pro 560X",
+        //     tier: 3
+        // },
         RAM:{
             amount: 16,
             unit: "GB",
@@ -103,3 +103,10 @@ const specs = [
         userId: 1
     }
 ]
+
+users.forEach(user=> User.create(user))
+computers.forEach(computer=> Computer.create(computer))
+favorites.forEach(favorite=> Favorite.create(favorite))
+recommendations.forEach(recommendation => Recommendation.create(recommendation))
+reviews.forEach(review=> Review.create(review))
+specs.forEach(spec=> Specs.create(spec))

@@ -1,9 +1,9 @@
+const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const INTEGER = Sequelize.INTEGER
 const Model = Sequelize.Model
 const BOOLEAN = Sequelize.BOOLEAN
-const Sequelize = require('sequelize')
-const Recommendation = requre('./Recommendaton')
+// const Recommendation = require('./Recommendaton')
 
 
 
@@ -28,7 +28,7 @@ Computer.init({
         type: STRING,
         size: STRING
     },
-    CPU:{
+    CPUs:{
         name: STRING,
         tier: INTEGER
     },
