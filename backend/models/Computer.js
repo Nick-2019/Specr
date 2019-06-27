@@ -23,7 +23,10 @@ Computer.init({
         model: STRING,
         OEMURL: STRING,
         os: STRING,
-        msrp: INTEGER
+        msrp: INTEGER,
+        img: STRING,
+        type: STRING,
+        size: STRING
     },
     CPU:{
         name: STRING,

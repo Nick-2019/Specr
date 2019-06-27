@@ -28,7 +28,8 @@ Specs.init({
     RAM:{
         amount: INTEGER,
         unit: STRING
-    }
+    },
+    userId: INTEGER
 },{
     sequelize,
     modelName: 'specs'
