@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const INTEGER = Sequelize.INTEGER
-// const User = require('./User')
-// const Computer = require('./Computer')
+const User = require('./User')
+const Computer = require('./Computer')
 
 
 
@@ -23,6 +23,9 @@ Recommendation.init({
     sequelize,
     modelName: 'recommendation'
 })
+
+// Recommendation.belongsTo(User)
+// Recommendation.belongsTo(Computer)
 
 module.exports = Recommendation
 sequelize.sync()

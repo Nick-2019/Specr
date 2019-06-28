@@ -2,8 +2,9 @@ const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const INTEGER = Sequelize.INTEGER
 const BOOLEAN = Sequelize.BOOLEAN
-// const Recommendation = require('./Recommendaton')
-
+const Recommendation = require('./Recommendation')
+const Review = require('./Review')
+const Favorite = require('./Favorite')
 
 
 
@@ -79,11 +80,16 @@ Computer.init({
     modelName: 'computer'
 })
 
-// Computer.belongsTo(User, {foreignKey: 'userId'})
-// User.hasMany(Computer, {as: "computers"})
 
-// Computer.hasMany(Recommendation, {as: 'recommendations'})
+// Computer.hasMany(Recommendation, {as: 'recommendations', foreignKey:'computerId', onDelete: 'cascade', hooks: true})
+// Computer.hasMany(Review, {as: 'reviews', foreignKey:'computerId', onDelete: 'cascade', hooks: true})
+// Computer.hasMany(Favorite, {as: 'favorited', foreignKey:'computerId', onDelete: 'cascade', hooks: true})
 // Computer.hasMany(User {through: Recommendation})
+
+// Computer.hasMany(Favorite, {as: 'favorites', foreignKey:'computerId', onDelete: 'cascade', hooks:true})
+// Computer.hasMany(Review, {as: 'reviews', foreignKey:'computerId', onDelete: 'cascade', hooks:true})
+// Computer.hasMany(Recommendation, {as: 'recommendation', foreignKey:'computerId', onDelete: 'cascade', hooks: true})
+
 
 module.exports = Computer
 sequelize.sync()
