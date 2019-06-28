@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const INTEGER = Sequelize.INTEGER
-// const User = require('./User')
+const User = require('./User')
 
 
 
@@ -26,12 +26,12 @@ Spec.init({
     ramSize: INTEGER,
     ramUnit: STRING,
     // ramType: STRING,
-    userId: INTEGER
+    // userId: INTEGER
 },{
     sequelize,
     modelName: 'spec'
 })
-// Specs.belongsTo(User, {foreignKey: 'userId'})
+// Spec.belongsTo(User, {as: 'specs', foreignKey: 'userId'})
 // User.hasMany(Specs, {as: 'specs', onDelete: 'cascade', hooks: true})
 
 module.exports = Spec

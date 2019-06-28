@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const INTEGER = Sequelize.INTEGER
+const Computer = require('./Computer')
+const User = require('./User')
 
 
 
@@ -20,6 +22,9 @@ Favorite.init({
     sequelize,
     modelName: "favorite"
 })
+
+// Favorite.belongsTo(User)
+// Favorite.belongsTo(Computer)
 
 module.exports = Favorite
 sequelize.sync()

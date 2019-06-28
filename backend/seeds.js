@@ -13,6 +13,12 @@ const Review = require('./models/Review')
 // Review.sync()
 
 
+Computer.hasMany(Favorite, {as: 'favorites', foreignKey:'computerId', onDelete: 'cascade', hooks:true})
+Computer.hasMany(Review, {as: 'reviews', foreignKey:'computerId', onDelete: 'cascade', hooks:true})
+Computer.hasMany(Recommendation, {as: 'recommendation', foreignKey:'computerId', onDelete: 'cascade', hooks: true})
+
+
+
 const users = [
     {
         username: "Fizzbuzz",

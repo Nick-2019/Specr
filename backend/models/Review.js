@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize')
 const STRING = Sequelize.STRING
 const INTEGER = Sequelize.INTEGER
-
+const Computer = require('./Computer')
+const User = require('./User')
 
 
 
@@ -22,6 +23,9 @@ Review.init({
     sequelize,
     modelName: 'review'
 })
+
+// Review.belongsTo(User)
+// Review.belongsTo(Computer)
 
 module.exports = Review
 sequelize.sync()
