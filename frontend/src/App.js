@@ -4,15 +4,26 @@ import './App.css';
 import Homepage from './Containers/Homepage'
 import ComputerContainer from './Containers/ComputerContainer'
 import ComputerPage from './Containers/ComputerPage'
+import About from './AboutUs'
+import Login from './Login'
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+
+
 
 function App() {
   return (
+    <BrowserRouter>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Homepage />
-        <ComputerPage />
-        <ComputerContainer />
+        <Switch>
+        <Route path='/home' render={() => <Homepage />} />
+        <Route path='/computer/:id' render={() => <ComputerPage /> } />
+        <Route path='/computer' render={() => <ComputerContainer/> } />
+        {/* <ComputerContainer /> */}
+        <Route path='/about' render={() => <About/> } />
+        {/* <About /> */}
+        <Login />
         <p>
           Hello world!
         </p>
@@ -24,8 +35,10 @@ function App() {
         >
           Bird up! The WORST show on television!
         </h1>
+        </Switch>
       </header>
     </div>
+    </BrowserRouter>
   );
 }
 
