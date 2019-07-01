@@ -25,6 +25,7 @@ Spec.init({
     gpuTier: INTEGER,
     ramSize: INTEGER,
     ramUnit: STRING,
+    cpuBrand: STRING
     // ramType: STRING,
     // userId: INTEGER
 },{

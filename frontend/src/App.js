@@ -7,6 +7,8 @@ import ComputerPage from './Containers/ComputerPage'
 import About from './AboutUs'
 import Login from './Login'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import Header from './header'
+import Survey from './Containers/Survey'
 
 
 
@@ -14,15 +16,19 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      {/* <header className="App-header">
+      </header> */}
+        <Header />
+
+
         <Switch>
         <Route path='/home' render={() => <Homepage />} />
         <Route path='/computer/:id' render={() => <ComputerPage /> } />
-        <Route path='/computer' render={() => <ComputerContainer/> } />
+        {/* <Route path='/computer' render={() => <ComputerContainer/> } /> */}
         {/* <ComputerContainer /> */}
         <Route path='/about' render={() => <About/> } />
         {/* <About /> */}
+        <Route path='/survey' render={() => <Survey /> }  />
         <Login />
         <p>
           Hello world!
@@ -36,7 +42,6 @@ function App() {
           Bird up! The WORST show on television!
         </h1>
         </Switch>
-      </header>
     </div>
     </BrowserRouter>
   );

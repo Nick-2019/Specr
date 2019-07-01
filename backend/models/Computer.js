@@ -29,6 +29,7 @@ Computer.init({
         size: STRING,
         cpuName: STRING,
         gpuName: STRING,
+        cpuBrand: STRING,
         cpuTier: INTEGER,
         gpuTier: INTEGER,
         ramAmount: INTEGER,
@@ -36,7 +37,8 @@ Computer.init({
         ramType: STRING,
         ishidden: BOOLEAN,
         newegg: STRING,
-        uploadedby: STRING
+        uploadedby: STRING,
+        gpuBrand: STRING
     // info:{
     //     name: STRING,
     //     make: STRING,
