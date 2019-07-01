@@ -6,7 +6,7 @@ export default class ComputerPage extends Component {
 render(){
     return(
         <div>
-            Computer page
+            Computer Page
         </div>
     )
 }

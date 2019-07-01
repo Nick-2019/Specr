@@ -51,6 +51,8 @@ const computers = [
         cpuName: "Intel Core i9",
         gpuName: "Radeon Pro 560X",
         cpuTier: 6,
+        cpuBrand: "Intel",
+        gpuBrand: "AMD",
         gpuTier: 3,
         ramAmount: 16,
         ramUnit: "GB",
@@ -58,48 +60,31 @@ const computers = [
         ishidden: false,
         newegg: "https://www.newegg.com/p/2SN-0001-01059?Description=macbook%20i9&cm_re=macbook_i9-_-9SIABMT9DY0338-_-Product",        
         uploadedby: "MASTER"
-    }
-        // info:{
-        //     name: "Macbook Pro",
-        //     make: "Apple",
-        //     model: "MV912LL/A",
-        //     OEMURL: "https://www.apple.com/macbook-pro/specs/",
-        //     os: "OSX",
-        //     msrp: 2799,
-        //     img: "https://c1.neweggimages.com/ProductImageCompressAll1280/ABMT_1_201906181656126043.jpg",
-        //     type: "Laptop",
-        //     size: "15.6 Inch",
-        //     cpu:{
-        //         name: "Intel core i9",
-        //         tier: 6
-        //     },
-        //     gpu:{
-        //         name: "Radeon Pro 560X",
-        //         tier: 3
-        //     },
-        //     ram:{
-        //         amount: 16,
-        //         unit: "GB",
-        //         type: "DDR4"
-        //     },
-        // },
-        // CPUs:{
-        //     name: "Intel core i9",
-        //     tier: 6
-        // },
-        // GPU:{
-        //     name: "Radeon Pro 560X",
-        //     tier: 3
-        // },
-        // RAM:{
-        //     amount: 16,
-        //     unit: "GB",
-        //     type: "DDR4"
-        // },
-        // ishidden: false,
-        // newegg: "https://www.newegg.com/p/2SN-0001-01059?Description=macbook%20i9&cm_re=macbook_i9-_-9SIABMT9DY0338-_-Product",
-        // uploadedby: "MASTER"
-    // }
+    },
+    {
+        name: "Gamer Supreme",
+        make: "CyberpowerPC",
+        model: "SLC9080CPG ",
+        OEMURL: "https://www.cyberpowerpc.com/",
+        os: "Windows 10",
+        msrp: 2049,
+        img: "https://c1.neweggimages.com/ProductImageCompressAll1280/83-230-391-V01.jpg",
+        type: "Desktop",
+        size: "N/A",
+        cpuName: "Ryzen 7 2700X",
+        gpuName: "NVIDIA GeForce RTX 2080",
+        cpuTier: 5,
+        cpuBrand: "Intel",
+        gpuBrand: "Nvidia",
+        gpuTier: 6,
+        ramAmount: 16,
+        ramUnit: "GB",
+        ramType: "DDR4",
+        ishidden: false,
+        newegg: "https://www.newegg.com/cyberpowerpc-gamer-supreme-slc9080cpg/p/N82E16883230391",        
+        uploadedby: "MASTER"
+    },
+
     
 ]
 
@@ -133,32 +118,7 @@ const specs = [
         gpuTier: 6,
         ramSize: 8,
         ramUnit: "GB",
-        // info:{
-        //     cpu:{
-        //         name: "Intel Core i7",
-        //         tier: 5
-        //         },
-        //     gpu:{
-        //         name: "RTX 2080",
-        //         tier: 6
-        //     },
-        //     ram:{
-        //         amount: 8,
-        //         unit: "GB"
-        //     }
-        // },
-        // cpu:{
-        //     name: "Intel Core i7",
-        //     tier: 5
-        //     },
-        // gpu:{
-        //     name: "RTX 2080",
-        //     tier: 6
-        // },
-        // ram:{
-        //     amount: 8,
-        //     unit: "GB"
-        // },
+        cpuBrand: "Intel",
         userId: 1
     }
 ]

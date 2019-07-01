@@ -31,3 +31,21 @@
     transform: rotate(360deg);
   }
 }
+
+.navBar{
+  /* display: inline-block; */
+  /* border: solid */
+}
+
+.headerBar{
+  background-color: red;
+  /* display: inline-block */
+}
+
+.NavBarBox{
+  display: inline-block;
+  border: solid black;
+  padding: 30px;
+  
+  
+}
