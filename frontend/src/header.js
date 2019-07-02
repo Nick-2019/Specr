@@ -1,24 +1,38 @@
 import React, { Component } from 'react';
 import './App.css'
-
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 export default class Header extends Component {
+
+    handleClick = () => {
+        this.props.history.push('/survey')
+
+    }
     render(){
         return(
             <div class="headerBar">
             <div className="navBar">
-                <div className="NavBarBox">
-                    Find your next Computer
+                <Link to='/home'>
+            <div className="NavBarBox">
+                    Home
                 </div>
+                </Link>
+
+                <Link to='/survey'>
+                <div className="NavBarBox">
+                    <a>Find your next computer</a>
+                </div>
+                </Link>
+                <Link to="/about">
                 <div className="NavBarBox">
                     About
                 </div>
-                <div className="NavBarBox">
-                    Reviews
-                </div>
+                </Link>
+                <Link to="/">
                 <div className="NavBarBox">
                     Login
                 </div>
+                </Link>
             </div>
         </div>
         )

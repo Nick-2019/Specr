@@ -17,6 +17,8 @@ export default class Survey extends Component{
         let arr = []
         let arr1 = []
         let arr2 = []
+        let arr3 = []
+        let finalarr = []
         let start = this.state.computers
         // First question- Primary Use
         let i = e.target.parentElement[0].value
@@ -27,19 +29,20 @@ export default class Survey extends Component{
         //Second Question- Gaming
         let j = e.target.parentElement[1].value
         let secondObj = JSON.parse(j)
-        debugger
+        // debugger
 
         //Third Question- School
-        let k = e.target.parentElement[2].value
-        let thirdObj = JSON.parse(k)
+        // let k = e.target.parentElement[2].value
+        // let thirdObj = JSON.parse(k)
 
         //Fourth Question- Streaming 
         let l = e.target.parentElement[3].value
         let fourthObj = JSON.parse(l)
+        // debugger
 
         //Fith Question- Buisness
-        let m = e.target.parentElement[4].value
-        let fithObj = JSON.parse(m)
+        let fithObj = e.target.parentElement[4].value
+        // let fithObj = JSON.parse(m)
         //Time to start the filter nonsense
         //Filtering on the first question
         start.filter(computer => {
@@ -58,18 +61,30 @@ export default class Survey extends Component{
         secondObj === null ? arr1.map(computer => {arr2.push(computer)}) : arr1.filter(computer => {
             computer.gpuTier >= secondObj.gpu ? arr2.push(computer) : console.log("no")
         })
-
-        //OS suggestion on Question 1
-        // let osSuggest = firstObj.os 
-        debugger
-        // if(firstObj.os !== undefined){
-        //     // debugger
-        //     osSuggest = firstObj.os
-        //     debugger
-        // }
-
-
         console.log(arr2)
+        // debugger
+
+        //Streaming Filtering
+        fourthObj === null ? arr2.map(computer => arr3.push(computer)) : arr2.filter(computer => {
+            computer.gpuTier >= 4 ? arr3.push(computer) : console.log("no")
+        })
+        console.log(arr3)
+        finalarr = arr3.sort((a, b) => {
+            if(a.msrp < b.msrp){return -1}
+            if(a.msrp > b.msrp){return 1}
+        }
+        )
+        //  debugger
+
+
+
+        
+        // debugger
+
+        // debugger
+
+
+        // console.log(arr2)
         // debugger
 
 
@@ -83,7 +98,9 @@ export default class Survey extends Component{
         // debugger
         this.setState({
             tookSurvey: true,
-            display: arr2
+            display: finalarr,
+            recomendcpu: fithObj,
+            recomendos: firstObj.os
         })
     }
 
@@ -114,7 +131,7 @@ export default class Survey extends Component{
 
     render(){
         return(
-            <div>
+            <div className="surveybackground">
                 {!this.state.tookSurvey ? <SurveyTemplate click={this.surveyTake} /> : <Container comps={this.state.display} />}
             </div>
         )

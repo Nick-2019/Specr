@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './survey.css'
+import '../container.css'
 
 export default class SurveyTemplate extends Component{
 
@@ -9,12 +11,13 @@ export default class SurveyTemplate extends Component{
     render(){
         return(
             <div>
+                <div className="surveybackground">
             <form className="survey">
                 What do you intend to primarily use this computer for?<select >
                 <option disabled selected value>Select your use for this computer</option>
                     <option value='{"cpu":5,"gpu":2, "ram":8, "os": null}' >Engineering</option>
                     <option value='{"cpu":4,"gpu":2, "os": "Windows"}'>Gaming</option>
-                    <option value='{"cpu":3, "gpu": 0, , "os": null}'>Finance</option>
+                    <option value='{"cpu":3, "gpu": 0, "os": null}'>Finance</option>
                     <option value='{"cpu":5,"os":"macos", "gpu": 0, "reason": "coding"}'>Programming</option>
                     <option value='{"cpu":1,"os":"chrome", "gpu": 0}'>Only Web Browsing</option>
                     <option value='{"cpu":5,"gpu":1, "os": "macos", "reason": "photo"}' >Photo editing</option>
@@ -33,20 +36,20 @@ export default class SurveyTemplate extends Component{
                 </select>
                 <br></br>
                Do you intend to use this computer for School?<select >
-                <option disabled selected value>Education Use</option>
-                    <option value='{"os":"macos"}'>Yes</option>
+                <option disabled selected value value="null" >Education Use</option>
+                    <option value="null">Yes</option>
                     <option value="null">No</option>
                 </select>
                 <br></br>
-                Do you intend to use this computer for Streaming?<select >
-                <option disabled selected value>Streaming</option>
+                Do you intend to use this computer for streaming to websites like Twitch?<select >
+                <option disabled selected value value="null" >Streaming</option>
                     <option value='{"gpu":4}'>Yes</option>
                     <option value="null" >No</option>
                 </select>
                 <br></br>
                 Do you intend to use this computer for a buisness/startup?<select >
                 <option disabled selected value>Y/N</option>
-                    <option value='{"cpubrand": "Intel"} ' >Yes</option>
+                    <option value="Intel" >Yes</option>
                     <option value="null">No</option>
                 </select>
                 <br></br>
@@ -65,6 +68,7 @@ export default class SurveyTemplate extends Component{
                 <input type="submit" text="Submit" onClick={(e) => this.props.click(e) } ></input>
 
             </form>
+            </div>
         </div>
         )
     }

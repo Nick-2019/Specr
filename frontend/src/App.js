@@ -39,7 +39,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Bird up! The WORST show on television!
+          {/* Bird up! The WORST show on television! */}
         </h1>
         </Switch>
     </div>
