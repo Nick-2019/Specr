@@ -14,7 +14,10 @@ export default class Survey extends Component{
 
     surveyTake = (e) => {
         e.preventDefault()
-        console.log("HAIL SANTA")
+        let i = e.target.parentElement[0].value
+        let obj = JSON.parse(i)
+
+        debugger
         this.setState({
             tookSurvey: true
         })
@@ -45,7 +48,7 @@ export default class Survey extends Component{
     render(){
         return(
             <div>
-                {!this.state.tookSurvey ? <SurveyTemplate click={this.surveyTake} /> : <Container />}
+                {!this.state.tookSurvey ? <SurveyTemplate click={this.surveyTake} /> : <Container comps={this.state.display} />}
             </div>
         )
     }
