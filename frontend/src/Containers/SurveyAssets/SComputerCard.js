@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
+import './survey.css'
 
 export default class CompCard extends Component{
     render(){
         return(
-            <div>
-                <div className='cardCont'>
+            <div className='card'>
+                <div>
                 <img className='cardImg' src={this.props.comp.img} />
-            </div>
+                </div>
             <div className='specs'>
                 <p>
                     Specs:
@@ -26,10 +27,12 @@ export default class CompCard extends Component{
 
                 </div>
             </div>
-            <div>
-            <h1  className='name'>
+            <div   className='name'>
+            <h1>
                 {this.props.comp.make} {this.props.comp.name}
             </h1>
+            <br>
+            </br>
             <div>
                 <h2>
                     MSRP: ${this.props.comp.msrp}
