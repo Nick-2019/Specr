@@ -11,8 +11,11 @@ export default class SurveyTemplate extends Component{
     render(){
         return(
             <div>
+
                 <div className="surveybackground">
             <form className="survey">
+                <h2>To ensure your computer best fits your needs, please answer every question that you can.</h2>
+                <h3>This ensures your suggestions will be more likely to give you a great experience!</h3>
                 What do you intend to primarily use this computer for?<select >
                 <option disabled selected value>Select your use for this computer</option>
                     <option value='{"cpu":5,"gpu":2, "ram":8, "os": null}' >Engineering</option>
