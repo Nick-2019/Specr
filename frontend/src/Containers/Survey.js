@@ -12,6 +12,18 @@ const CompUrl = "http://localhost:8000/computers"
 export default class Survey extends Component{
 
 
+
+    filterByType = (e) => {
+        let arr = this.state.reccomp
+        let newDisplay=[]
+        e.target.value === "Filter by computer type" ? console.log("No") : arr.filter(computer => {
+            computer.type.toLowerCase() === e.target.value.toLowerCase() ? newDisplay.push(computer) : console.log("no")
+        })
+        e.target.value === "All" ? this.setState({display: arr}) : this.setState({display: newDisplay})
+        
+    }
+
+
     surveyTake = (e) => {
         e.preventDefault()
         let arr = []
@@ -100,7 +112,8 @@ export default class Survey extends Component{
             tookSurvey: true,
             display: finalarr,
             recomendcpu: fithObj,
-            recomendos: firstObj.os
+            recomendos: firstObj.os,
+            reccomp: finalarr
         })
     }
 
@@ -112,7 +125,8 @@ export default class Survey extends Component{
             display: [],
             tookSurvey: false,
             recomendcpu: null,
-            recomendos: null
+            recomendos: null,
+            reccomp: []
 
             // isLoading: true
         }
@@ -132,7 +146,7 @@ export default class Survey extends Component{
     render(){
         return(
             <div className="surveybackground">
-                {!this.state.tookSurvey ? <SurveyTemplate click={this.surveyTake} /> : <Container comps={this.state.display} />}
+                {!this.state.tookSurvey ? <SurveyTemplate click={this.surveyTake} /> : <Container type={this.filterByType} comps={this.state.display} />}
             </div>
         )
     }
