@@ -38,6 +38,24 @@ app.get('/favorites', (req, res) => {
     Favorite.findAll()
     .then(favorite => res.json(favorite))
 })
+app.get('/computers/:id', (req, res) => {
+    let arr = []
+    Computer.findByPk(req.params.id)
+    .then(computer => {
+        res.json(computer)
+    })
+})
+
+app.get('/computers/:id/reviews', async (req, res) => {
+    // var compId = await getId(req.params.name);
+    Review.findAll({where:{computerId: req.params.id}})
+    .then(review => {
+        res.json(review)
+    })
+    .catch(
+        () => { res.json({failed:"Could not complete request"}) }
+    );
+})
 
 // Playing with Verification/authentication
 

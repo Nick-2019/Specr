@@ -264,9 +264,34 @@ const specs = [
         userId: 1
     }
 ]
+let special =     {
+    name: "Strix SCAR II",
+    make: "ASUS ROG",
+    model: "GL704GV-DS74",
+    OEMURL: "https://rog.asus.com/",
+    os: "Windows 10",
+    msrp: 1799,
+    img: "https://c1.neweggimages.com/NeweggImage/ProductImageCompressAll1280/34-235-124-V20.jpg",
+    type: "Laptop",
+    size: "17.3 Inches",
+    cpuName: "Intel Core i7",
+    gpuName: "Nvidia 1060",
+    cpuTier: 5,
+    cpuBrand: "Intel",
+    gpuBrand: "Nvidia",
+    gpuTier: 2,
+    ramAmount: 16,
+    ramUnit: "GB",
+    ramType: "DDR4",
+    ishidden: false,
+    newegg: "https://www.newegg.com/rog-scar-ii-edition-asus-rog-strix-scar-ii-gl704gv-ds74-gaming-entertainment/p/N82E16834235124?Item=N82E16834235124",        
+    uploadedby: "MASTER"
+}
+
+Computer.create(special)
 
 users.forEach(user=> User.create(user))
-// computers.forEach(computer=> Computer.create(computer))
+computers.forEach(computer=> Computer.create(computer))
 favorites.forEach(favorite=> Favorite.create(favorite))
 recommendations.forEach(recommendation => Recommendation.create(recommendation))
 reviews.forEach(review=> Review.create(review))

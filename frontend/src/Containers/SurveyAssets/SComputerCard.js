@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './survey.css'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 export default class CompCard extends Component{
     render(){
         return(
+            <Link to={"/computers/" + this.props.comp.id}>
             <div className='card'>
                 <div>
                 <img className='cardImg' src={this.props.comp.img} />
@@ -46,6 +48,7 @@ export default class CompCard extends Component{
             </li>
             </div>
             </div>
+            </Link>
         )
     }
 }
