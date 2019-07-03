@@ -23,7 +23,7 @@ function App() {
 
         <Switch>
         <Route path='/home' render={() => <Homepage />} />
-        <Route path='/computer/:id' render={() => <ComputerPage /> } />
+        <Route path='/computers/:id' render={(e) => <ComputerPage id={e} /> } />
         {/* <Route path='/computer' render={() => <ComputerContainer/> } /> */}
         {/* <ComputerContainer /> */}
         <Route path='/about' render={() => <About/> } />

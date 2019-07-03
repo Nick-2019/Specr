@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 import './container.css'
 
@@ -8,6 +9,7 @@ export default class ComputerCard extends Component {
 
 render(){
     return(
+        <Link to={{ pathname: '/computers/' + this.props.comp.id, comp:this.props.comp}}>
         <div className='card'>
             <div className='cardCont'>
                 <img className='cardImg' src={this.props.comp.img} />
@@ -48,6 +50,7 @@ render(){
             </li>
             </div>
         </div>
+        </Link>
     )
 }
 }
