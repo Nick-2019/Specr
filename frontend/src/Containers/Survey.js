@@ -23,6 +23,26 @@ export default class Survey extends Component{
         
     }
 
+    filterByCpu = (e) => {
+        let arr = this.state.reccomp
+        let newDisplay=[]
+        e.target.value === "Filter by computer CPU brand" ? console.log("No") : arr.filter(computer => {
+            computer.cpuBrand.toLowerCase() === e.target.value.toLowerCase() ? newDisplay.push(computer) : console.log("no")
+        })
+        e.target.value === "All" ? this.setState({display: arr}) : this.setState({display: newDisplay})
+        
+    }
+
+    filterByOs = (e) => {
+        let arr = this.state.reccomp
+        let newDisplay=[]
+        e.target.value === "Filter by OS" ? console.log("No") : arr.filter(computer => {
+            computer.os.toLowerCase() === e.target.value.toLowerCase() ? newDisplay.push(computer) : console.log("no")
+        })
+        e.target.value === "All" ? this.setState({display: arr}) : this.setState({display: newDisplay})
+        
+    }
+
 
     surveyTake = (e) => {
         e.preventDefault()
@@ -146,7 +166,7 @@ export default class Survey extends Component{
     render(){
         return(
             <div className="surveybackground">
-                {!this.state.tookSurvey ? <SurveyTemplate click={this.surveyTake} /> : <Container type={this.filterByType} comps={this.state.display} />}
+                {!this.state.tookSurvey ? <SurveyTemplate click={this.surveyTake} /> : <Container cpu={this.filterByCpu} type={this.filterByType} os={this.filterByOs} comps={this.state.display} />}
             </div>
         )
     }

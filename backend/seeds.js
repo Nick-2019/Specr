@@ -74,7 +74,7 @@ const computers = [
         cpuName: "Ryzen 7 2700X",
         gpuName: "NVIDIA GeForce RTX 2080",
         cpuTier: 5,
-        cpuBrand: "Intel",
+        cpuBrand: "AMD",
         gpuBrand: "Nvidia",
         gpuTier: 6,
         ramAmount: 16,

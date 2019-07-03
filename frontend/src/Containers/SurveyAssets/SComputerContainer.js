@@ -14,6 +14,19 @@ export default class Container extends Component{
                         <option value="Tablet">Tablet</option>
                         <option value="All">All</option>
                     </select>
+                    <select onChange={(e) => this.props.cpu(e)}>
+                        <option selected="selected" >Filter by CPU brand</option>
+                        <option value="Intel">Intel</option>
+                        <option value="AMD">Amd</option>
+                        <option value="All">All</option>
+                    </select>
+                    <select onChange={(e) => this.props.os(e)}>
+                        <option selected="selected" >Filter by OS</option>
+                        <option value="Windows 10">Windows</option>
+                        <option value="Mac OS">Mac</option>
+                        <option value="chrome">Chrome</option>
+                        <option value="All">All</option>
+                    </select>
                 </div>
                 {/* This is a container lol */}
                 {this.props.comps.map(comp => <CompCard comp={comp} /> )}
