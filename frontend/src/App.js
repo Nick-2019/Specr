@@ -10,6 +10,8 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Header from './header'
 import Survey from './Containers/Survey'
 
+import Test from './LoginTesting'
+
 
 
 function App() {
@@ -29,6 +31,7 @@ function App() {
         <Route path='/about' render={() => <About/> } />
         {/* <About /> */}
         <Route path='/survey' render={() => <Survey /> }  />
+        {/* <Route path='/test/login' render={() => <Test />} /> */}
         <Login />
         <p>
           Hello world!
