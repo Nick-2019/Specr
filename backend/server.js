@@ -9,10 +9,45 @@ const Recommendation = require('./models/Recommendation')
 const Spec = require('./models/Spec')
 const Review = require('./models/Review')
 const jwt = require('jsonwebtoken')
+const bcrypt = require('bcrypt')
 
 const app = express()
-app.use(cors())
+
+SECRET = "k"
+
+const corsOptions = {
+    "origin": "http://localhost:3000",
+    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    "preflightContinue": true, // false
+    "optionsSuccessStatus": 200, // 204
+    "credentials":true,
+    "allowedHeaders":"Content-Type,*"
+}
+app.use(cors(corsOptions))
 app.use(bodyParser.json())
+
+async function getId(name) {
+    var id = -1;
+    await User.findAll({where:{username:name}})
+    .then(
+      users => {
+        if(users.length > 0) {
+          id = users[0].id
+        }
+      }
+    ).catch( () => {console.log("could not find user")});
+    return id;
+  }
+  
+
+function getToken(req) {
+    if(req.headers.authorization) {
+      var arr = req.headers.authorization.split(" ");
+      if((arr.length===2) && (arr[0]==="Bearer")) {
+        return arr[1];
+      }
+    }
+}
 
 app.get('/users', (req, res) => {
     User.findAll()
@@ -55,6 +90,61 @@ app.get('/computers/:id/reviews', async (req, res) => {
     .catch(
         () => { res.json({failed:"Could not complete request"}) }
     );
+})
+
+app.get('/', (req, res) => {
+    res.json("Maybe remember that you need something else? ex: /users or /computers")
+})
+
+app.post('/users/register', (req, res) => {
+    bcrypt.hash(req.body.password, 10, async function(err, hash){
+        if(err){
+            return res.status(500).json({error:"error creating hash"})
+        }
+        else{
+            const user = User.build({
+                username: req.body.username,
+                passwordhash: hash,
+                name: req.body.name,
+                isverified: false,
+                isadmin: false
+            });
+            // await user.build()
+            user.save().then(
+                function(result){
+                    return res.status(200).json({success:'New User Created!'})
+                }).catch(error => {
+                    return res.status(500).json({error:'Well that failed. Try again?'})
+                })
+        }
+    })
+
+})
+
+app.post('/login', cors(corsOptions), async function(req, res) {
+    var id = await getId(req.body.username)
+    User.findByPk(id)
+    .then(
+        function(user) {
+            bcrypt.compare(req.body.password, user.passwordhash,
+                function(err, result){
+                    if(err){
+                        return res.status(401).json({failed:"Invalid Username or Password"})
+                    }
+                    if(result){
+                        const token = jwt.sign({
+                            name:user.username,
+                            id:user.id
+                        },
+                        SECRET,
+                        {expiresIn: '2h'})
+                        return res.status(200).json({success:'Approved', token:token, name:user.name})
+                    }
+                    return res.status(401).json({failed:'Pay no attention to the man behind the curtain'})
+                })
+        }
+    )
+
 })
 
 // Playing with Verification/authentication
