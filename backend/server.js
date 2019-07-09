@@ -92,8 +92,71 @@ app.get('/computers/:id/reviews', async (req, res) => {
     );
 })
 
+
+app.get('/computers/:id/favorites', async (req, res) => {
+    // var compId = await getId(req.params.name);
+    Favorite.findAll({where:{computerId: req.params.id}})
+    .then(fav => {
+        res.json(fav)
+    })
+    .catch(
+        () => { res.json({failed:"Could not complete request"}) }
+    );
+})
+
+app.get('/users/:id/favorites', async (req, res) => {
+    // var compId = await getId(req.params.name);
+    Favorite.findAll({where:{userId: req.params.id}})
+    .then(fav => {
+        res.json(fav)
+    })
+    .catch(
+        () => { res.json({failed:"Could not complete request"}) }
+    );
+})
+
+
+
+
 app.get('/', (req, res) => {
     res.json("Maybe remember that you need something else? ex: /users or /computers")
+})
+
+app.post('/reviews', async (req, res) => {
+    // var userId = await getId(req.body["name"])
+    const review = Review.build({
+        content: req.body.content,
+        userId: req.body.userId,
+        computerId: req.body.computerId
+    })
+
+    review.save().then(
+        function(result){
+            return res.status(200).json({success: "Review Posted!"})
+        }
+    ).catch(error =>{
+        return res.status(500).json({error: "Those chickens are up to something"})
+    })
+    
+
+})
+
+app.post('/favorites', async (req, res) => {
+    // var userId = await getId(req.body["name"])
+    const favorite = Favorite.build({
+        userId: req.body.userId,
+        computerId: req.body.computerId
+    })
+
+    favorite.save().then(
+        function(result){
+            return res.status(200).json({success: "Favorite Created!"})
+        }
+    ).catch(error =>{
+        return res.status(500).json({error: "Those chickens are up to something"})
+    })
+    
+
 })
 
 app.post('/users/register', (req, res) => {
@@ -138,7 +201,7 @@ app.post('/login', cors(corsOptions), async function(req, res) {
                         },
                         SECRET,
                         {expiresIn: '2h'})
-                        return res.status(200).json({success:'Approved', token:token, name:user.name})
+                        return res.status(200).json({success:'Approved', token:token, name:user.name, userId: user.id, username: user.username})
                     }
                     return res.status(401).json({failed:'Pay no attention to the man behind the curtain'})
                 })
