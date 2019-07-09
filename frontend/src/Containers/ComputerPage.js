@@ -3,6 +3,7 @@ import Review from './ComputerReview'
 import MakeReview from './ReviewForm'
 
 const reviewURL = "http://localhost:8000/reviews"
+const favoriteURL = "http://localhost:8000/favorites"
 
 
 
@@ -122,10 +123,28 @@ export default class ComputerPage extends Component {
             reviews: arr
         })
 
-        debugger
+        // debugger
         // .then(this.loadReviews())
     }
         // debugger
+    }
+
+    favoriteComputer = (e) => {
+        e.preventDefault()
+        if(this.state.loggedin === true){
+        fetch(favoriteURL, {
+            method: 'POST',
+            headers: {
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                userId: localStorage.userId,
+                computerId: this.props.id.match.params.id,
+            })
+        })
+    }
+        // debugger
+
     }
 
 
@@ -146,7 +165,7 @@ render(){
                 <p>
                     {this.state.fav} people have favorited this computer
                 </p>
-                <button type="submit">Favorite this computer</button>
+                <button type="submit" onClick={(e) => this.favoriteComputer(e)}>Favorite this computer</button>
             </div>
 
 

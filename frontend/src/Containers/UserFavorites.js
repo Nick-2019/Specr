@@ -36,18 +36,24 @@ export default class UserFavs extends Component {
         fetch(userFavURL)
         .then(res=> res.json())
         .then(faved => {
+            let arr = []
+            faved.map(fav => {
+                let num = fav.computerId
+                arr.push(num)
+            })
             // debugger
             this.setState({
-                joiner: faved,
+                joiner: arr,
+                isLoading: false
             })
         })
         // .then(this.test())
 
 
         // debugger
-        this.setState({
-            isLoading: false
-        })
+        // this.setState({
+        //     isLoading: false
+        // })
         
     }
 
@@ -63,7 +69,7 @@ export default class UserFavs extends Component {
         return(
             <div>
                 {this.props.login ? "Your Favorited Computers": "Users must be logged in to view favorites"}
-                {this.props.isLoading ?  console.log("FUCK") : <FavContainer computers={this.state.computers} joiners={this.state.joiner} />}
+                {this.state.isLoading ?  console.log("FUCK") : <FavContainer computers={this.state.computers} joiners={this.state.joiner} />}
             </div>
         )
     }

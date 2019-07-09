@@ -76,6 +76,13 @@ class App extends Component {
     }
   }
 
+  logout = () => {
+    localStorage.clear()
+    this.setState({
+      isloggedin: false
+    })
+  }
+
 
   render(){
   return (
@@ -83,7 +90,7 @@ class App extends Component {
     <div className="App">
       {/* <header className="App-header">
       </header> */}
-        <Header />
+        <Header loggedIn={this.state.isloggedin} logout={this.logout} />
 
 
         <Switch>
