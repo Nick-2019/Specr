@@ -28,11 +28,18 @@ export default class Header extends Component {
                     About
                 </div>
                 </Link>
-                <Link to="/">
+                {this.props.loggedIn ? <Link to="/favorites"> <div className="NavBarBox">Favorited Computers</div> </Link> : <Link to="/">
                 <div className="NavBarBox">
                     Login
                 </div>
-                </Link>
+                </Link>  }
+
+                {this.props.loggedIn ? <Link to="/home"> <div className="NavBarBox" onClick={this.props.logout} >Logout</div> </Link> : console.log("No") }
+                {/* <Link to="/">
+                <div className="NavBarBox">
+                    Login
+                </div>
+                </Link> */}
             </div>
         </div>
         )

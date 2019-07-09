@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {BrowserRouter, Route, Switch, Link} from 'react-router-dom'
 
 
 export default class Login extends Component {
@@ -23,7 +24,7 @@ export default class Login extends Component {
 
                     Password:<input id='2' type="password" label="passwprd" ></input><br></br>
 
-                    <button type="submit" onClick={(e) => this.loginHandler(e) } >Login</button>
+                    <Link to='/home' ><button type="submit" onClick={(e) => this.loginHandler(e) } >Login</button></Link>
                 </form>
                 <button type="submit">Create Account</button>
 
