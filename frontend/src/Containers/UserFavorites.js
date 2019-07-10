@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import FavContainer from './FavComputer'
 
 const compURL = "http://localhost:8000/computers"
-const userFavURL = "http://localhost:8000/users/" + localStorage.userId + "/favorites"
+
 
 export default class UserFavs extends Component {
 
@@ -22,6 +22,7 @@ export default class UserFavs extends Component {
 
 
     componentDidMount() {
+        const userFavURL = "http://localhost:8000/users/" + localStorage.userId + "/favorites"
 
         let comparr = []
 

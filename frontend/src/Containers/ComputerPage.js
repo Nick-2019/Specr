@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Review from './ComputerReview'
 import MakeReview from './ReviewForm'
+import { Button } from 'semantic-ui-react'
 
 const reviewURL = "http://localhost:8000/reviews"
 const favoriteURL = "http://localhost:8000/favorites"
@@ -164,12 +165,24 @@ render(){
             </div>
 
 
-            <div className="saveFav">
+            <div className="saveFav" >
                 <p>
                     {this.state.fav} people have favorited this computer
                 </p>
-                <button type="submit" onClick={(e) => this.favoriteComputer(e)}>Favorite this computer</button>
+                <button type="submit" class="ui button" onClick={(e) => this.favoriteComputer(e)}><i class="heart icon" ></i> Favorite this computer</button>
             </div>
+            {/* <div className="saveFav">
+            <div class="ui labeled button" tabindex="0">
+            <div class="ui red button">
+            <i class="heart icon"></i> Like
+            </div>
+            <a class="ui basic red left pointing label">
+                1,048
+            </a>
+            </div>
+            </div> */}
+
+
 
 
 

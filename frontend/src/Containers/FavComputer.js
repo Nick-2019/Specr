@@ -6,7 +6,8 @@ export default class FavContainer extends Component {
     constructor(){
         super();
         this.state={
-            comps: []
+            comps: [],
+            loading: true
         }
     }
 
