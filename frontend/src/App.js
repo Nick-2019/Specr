@@ -13,6 +13,7 @@ import Survey from './Containers/Survey'
 import Test from './LoginTesting'
 import UserFavs from './Containers/UserFavorites'
 import Register from './Register'
+import 'semantic-ui-css/semantic.min.css'
 
 const loginUrl = "http://localhost:8000/login"
 const regUrl = "http://localhost:8000/users/register"
