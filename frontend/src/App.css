@@ -1,7 +1,7 @@
-.App {
+/* .App {
   text-align: center;
   background: grey
-}
+} */
 /* 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -33,33 +33,20 @@
   }
 /* } */
 
-.navBar{
-  /* display: inline-block; */
-  /* border: solid */
-}
+/* .navBar{
+  display: inline-block; */
+  /* border: solid
+} */
 
-.headerBar{
-  background-color: #3855c9;
-  border-bottom: #282c34 solid 20px;
-  /* display: inline-block */
-}
 
-.NavBarBox{
-  display: inline-block;
-  border: solid black;
-  padding: 30px;
-  padding-right: 350px;
-  
-  
-}
 
-.indvcomp{
+/* .indvcomp{
   height: 200px;
   width: 240px;
   float: left
 
-}
+} */
 
-.ReviewFormBox{
+/* .ReviewFormBox{
   float: left
-}
+} */

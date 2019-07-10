@@ -154,14 +154,17 @@ render(){
 
 
     return(
-        <div>
-            <h1>{this.state.computer.make} {this.state.computer.name}</h1>
+        <div className="compPageContainer">
+        <div className="compPage">
+            <div className="compTitleHolder">
+            <h1 className="compTitle" >{this.state.computer.make} {this.state.computer.name}</h1>
+            </div>
             <div>
                 <img className="indvcomp" src={this.state.computer.img} />
             </div>
 
 
-            <div>
+            <div className="saveFav">
                 <p>
                     {this.state.fav} people have favorited this computer
                 </p>
@@ -171,7 +174,8 @@ render(){
 
 
 
-            <div>
+            <div className="specCard">
+            <p>Specs:</p>
             <p>
                     CPU:{this.state.computer.cpuName}
             </p><br></br>
@@ -193,11 +197,15 @@ render(){
 
 
             </div>
-            {this.state.reviews.map(review => <Review review={review}/>)}
 
+
+            <div className="reviews">
+                <h2>Reviews:</h2>
+            {this.state.reviews.map(review => <Review review={review}/>)}
+            </div>
             {this.props.loginCheck ? <MakeReview compose={this.composedReview} /> : console.log("no")}
 
-
+        </div>
         </div>
     )
 }

@@ -1,10 +1,25 @@
 .card{
     display: inline-block;
-    border: solid black;
+    border: solid grey 5px;
     padding: 10px;
-    box-shadow: 5px 10px #333333;
+    box-shadow: 5px 15px black;
     text-align: center;
+    padding: 30px;
+    margin: 40px;
+    position: relative;
+    width:330px;
+    height: 730px;
+    vertical-align: top;
+    background: white;
+    border-radius: 22%;
+    
+    
 
+}
+.App{
+    background: #333330;
+    text-align: center;
+    border: solid black 10px
 }
 
 .cardImg{
@@ -12,6 +27,124 @@
     width: 240px;
     /* left: 40px; */
 }
+.headerBar{
+    border-bottom: black solid 20px;
+    display: inline-block;
+    position: relative;
+    border-bottom-right-radius: 20px 10px;
+    border-bottom-left-radius: 20px 10px;
+    border-left: black solid 10px;
+    border-right: black solid 10px;
+    
+  }
+  
+  .NavBarBox{
+    display: inline-block;
+    border: solid black;
+    position: relative;
+    height: 30px;
+    width: 300px;
+    vertical-align: top;
+    padding: 20px;
+    margin: 10px;
+    background-color: #6699CC;
+    border-radius: 12%;
+    box-shadow: 5px 5px black;
+    
+    
+    
+  }
+
+  /* .compPageContainer{
+      background: black
+  } */
+
+  .compPage{
+      border: solid black 10px;
+      background-color: white;
+      height: 100%;
+      width: 80%;
+      margin: 10px;
+      float: center
+
+  }
+
+  .indvcomp{
+      height: 400px;
+      width: 500px;
+      float: left
+
+  }
+
+  .saveFav{
+      float: right;
+      border-top: black solid 5px;
+      border-bottom: black solid 5px;
+      border-left: black solid 4px;
+      padding: 15px;
+      /* border-radius: 2%; */
+      background-color: #333330;
+  }
+  .compTitle{
+      border-bottom: black solid 4px;
+      float: top;
+      font-family: helvetica
+
+  }
+
+  .specCard{
+      border-left: solid black 5px;
+      border-top: solid black 5px;
+      text-align: center;
+      width: 500px;
+      float: right;
+      /* padding: 2px; */
+      margin-right: 30px;
+      background: #333330;
+      box-shadow: 10px 10px grey;
+      font-size: 22px
+
+
+
+
+  }
+
+  .reviews{
+      margin-top: 38%;
+      margin-left: 0%;
+      text-align: left
+  }
+
+  .review{
+      border: solid black 5px;
+      width: 600px;
+      margin-left: 2%;
+      margin-bottom: 10px;
+      max-height: 150px;
+      overflow: scroll;
+  }
+  .write{
+      margin-left: 45%;
+      margin-top: -10%;
+
+  }
+
+/* .card{
+    border: solid black 5px;
+    padding: 30px;
+    margin: 35px;
+    position: relative;
+    width: 300px;
+    height: 700px;
+    vertical-align: top;
+    border-radius: 20%;
+    background: white;
+    text-align: center;
+
+
+
+
+} */
 
 /* .cardCont{
     margin: left;
@@ -22,7 +155,7 @@
     float: left;
 } */
 
-.specList{
+/* .specList{
     font-size: 24px
 }
 
@@ -38,10 +171,10 @@
     top: 50%;
     bottom: 50%;
     /* left: 50%; */
-    right: 27%;
+    /* right: 27%;
 
 }
 
 .surveybackground{
     background: black
-}
+} */ 

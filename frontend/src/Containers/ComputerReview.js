@@ -10,11 +10,10 @@ export default class Review extends Component{
 
     render(){
         return(
-            <div>
-                <h1>Review</h1>
-                <p>
+            <div className="review">
+                <h2>
                 {this.props.review.content}
-                </p>
+                </h2>
             </div>
         )
     }
