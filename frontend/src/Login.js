@@ -6,10 +6,10 @@ export default class Login extends Component {
 
 
     loginHandler = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         const username = document.getElementById(1).value
         const password = document.getElementById(2).value
-
+        
         this.props.login(username, password)
     }
 
@@ -24,9 +24,9 @@ export default class Login extends Component {
 
                     Password:<input id='2' type="password" label="passwprd" ></input><br></br>
 
-                    <Link to='/home' ><button type="submit" onClick={(e) => this.loginHandler(e) } >Login</button></Link>
+                    <Link to='/home' > <div> <button type="submit" onClick={(e) => this.loginHandler(e) } >Login</button></div></Link>
                 </form>
-                <button type="submit">Create Account</button>
+                <Link to='/register'> <button type="submit">Create Account</button></Link>
 
             </div>
         )

@@ -10,12 +10,11 @@ export default class FavContainer extends Component {
         }
     }
 
-    // stateSetter = (arr) => {
-    //     debugger
-    //     this.setState({
-    //         comps: arr
-    //     })
-    // }
+    stateSetter = (arr) => {
+        this.setState({
+            comps: arr
+        })
+    }
 
 
     componentDidMount() {
@@ -31,10 +30,9 @@ export default class FavContainer extends Component {
             })
         })
 
-        // debugger
-        this.setState({
-            comps: favArr
-        })
+        this.stateSetter(favArr)
+
+
 
     }
 

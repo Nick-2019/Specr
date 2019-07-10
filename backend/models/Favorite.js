@@ -25,6 +25,8 @@ Favorite.init({
 
 // Favorite.belongsTo(User)
 // Favorite.belongsTo(Computer)
+// Computer.belongsToMany(User, {through: Favorite })
+// User.belongsToMany(Computer, {through: Favorite })
 
 module.exports = Favorite
 sequelize.sync()

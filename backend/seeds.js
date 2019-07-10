@@ -15,9 +15,15 @@ const Review = require('./models/Review')
 
 Computer.hasMany(Favorite, {as: 'favorites', foreignKey:'computerId', onDelete: 'cascade', hooks:true})
 Computer.hasMany(Review, {as: 'reviews', foreignKey:'computerId', onDelete: 'cascade', hooks:true})
-Computer.hasMany(Recommendation, {as: 'recommendation', foreignKey:'computerId', onDelete: 'cascade', hooks: true})
+// Computer.hasMany(Recommendation, {as: 'recommendation', foreignKey:'computerId', onDelete: 'cascade', hooks: true})
+// Computer.belongsToMany(User, {through: Favorite })
 
+// Computer.belongsToMany(User, {through: Favorite })
+// User.belongsToMany(Computer, {through: Favorite })
 
+// User.sync()
+// Computer.sync()
+// Favorite.sync()
 
 const users = [
     {

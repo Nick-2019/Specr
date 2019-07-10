@@ -12,8 +12,10 @@ import Header from './header'
 import Survey from './Containers/Survey'
 import Test from './LoginTesting'
 import UserFavs from './Containers/UserFavorites'
+import Register from './Register'
 
 const loginUrl = "http://localhost:8000/login"
+const regUrl = "http://localhost:8000/users/register"
 
 
 
@@ -21,6 +23,7 @@ const loginUrl = "http://localhost:8000/login"
 
 
 class App extends Component {
+  
 
   constructor(){
     super();
@@ -37,8 +40,23 @@ class App extends Component {
     alert("Incorrect credentials")
   }
 
+  // register = (username, password, name, confirm) => {
+  //   if(password === confirm){
+  //   fetch(regUrl, {
+  //     method: "POST", headers:{"Content-Type":"application/json"},
+  //     body:JSON.stringify({"username":username, "password": password, "name":name})
+  //   }) 
+  //   this.login(username, password)
+
+  // }else{
+  //   alert("Passwords do not match!")
+  // }
+
+  // }
+
 
   login = (username, password) => {
+    const { history } = this.props
     // e.preventDefault()
     // debugger
 
@@ -55,9 +73,11 @@ class App extends Component {
             // debugger
             localStorage.setItem("userId", data.userId)
             localStorage.setItem("userName", data.username)
+            localStorage.setItem("name", data.name)
             this.setState({
               isloggedin: true
             })
+            // this.props.history.push('/home')
           }else{
             this.badLogin()
           }
@@ -68,6 +88,22 @@ class App extends Component {
         
 
   }
+  register = (username, password, name, confirm) => {
+    if(password === confirm){
+    fetch(regUrl, {
+      method: "POST", headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({"username":username, "password": password, "name":name})
+    }) 
+    this.login(username, password)
+
+  }else{
+    alert("Passwords do not match!")
+  }
+
+  }
+
+
+
   componentDidMount() {
     if(localStorage.token !== undefined){
       this.setState({
@@ -94,6 +130,7 @@ class App extends Component {
 
 
         <Switch>
+        <Route path='/register' render={() => <Register register={this.register} /> } />
         <Route path='/favorites' render={() => <UserFavs login={this.state.isloggedin}/>} />
         <Route path='/home' render={() => <Homepage />} />
         <Route path='/computers/:id' render={(e) => <ComputerPage id={e} loginCheck={this.state.isloggedin} /> } />
