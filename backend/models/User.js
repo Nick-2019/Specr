@@ -5,6 +5,7 @@ const Spec = require('./Spec')
 const Recommendation = require('./Recommendation')
 const Review = require('./Review')
 const Favorite = require('./Favorite')
+const Computer = require('./Computer')
 
 const bcrypt = require('bcrypt')
 
@@ -29,7 +30,10 @@ User.init({
         allowNull: false,
              },
     name: STRING,
-    passwordhash: STRING,
+    passwordhash:{
+        type: STRING,
+        allowNull: false
+    },
     isverified: BOOLEAN,
     isadmin: BOOLEAN
 },{
@@ -44,7 +48,9 @@ User.init({
 User.hasMany(Spec, {as: 'specs', foreignKey:'userId', onDelete: 'cascade', hooks: true})
 User.hasMany(Favorite, {as: 'favorites', foreignKey:'userId', onDelete: 'cascade', hooks:true})
 User.hasMany(Review, {as: 'reviews', foreignKey:'userId'})
-User.hasMany(Recommendation, {as: 'recommendation', foreignKey:'userId', onDelete: 'cascade', hooks: true})
+// User.hasMany(Recommendation, {as: 'recommendation', foreignKey:'userId', onDelete: 'cascade', hooks: true})
+// User.belongsToMany(Computer, {through: Favorite })
+
 
 module.exports = User
 sequelize.sync()
