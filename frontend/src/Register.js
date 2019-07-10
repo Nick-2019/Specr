@@ -25,7 +25,7 @@ export default class Register extends Component {
                 Create an Account!
                 <div>
                     <form>
-                        Username:<input id="pants" type="text"></input>
+                        Username: <div class="ui input focus"><input id="pants" type="text"></input></div>
                         Password:<input id="shirt" type="password"></input>
                         Confirm Password:<input id="corgi" type="password"></input>
                         Name:<input id="bigbeans" type="text"></input>
