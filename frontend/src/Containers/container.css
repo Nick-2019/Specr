@@ -16,6 +16,10 @@
     
 
 }
+.regform{
+    align: center
+}
+
 .App{
     background: #333330;
     text-align: center;
@@ -51,8 +55,16 @@
     border-radius: 12%;
     box-shadow: 5px 5px black;
     
+    /* text-align: center;
+    vertical-align: 0% */
     
     
+    
+  }
+
+  .navtext{
+      color: black;
+      font-size: 19px
   }
 
   /* .compPageContainer{
