@@ -133,7 +133,7 @@ class App extends Component {
         <Switch>
         <Route path='/register' render={() => <Register register={this.register} /> } />
         <Route path='/favorites' render={() => <UserFavs login={this.state.isloggedin}/>} />
-        <Route path='/home' render={() => <Homepage />} />
+        <Route path='/home' render={() => <Homepage login={this.state.isloggedin} />} />
         <Route path='/computers/:id' render={(e) => <ComputerPage id={e} loginCheck={this.state.isloggedin} /> } />
         {/* <Route path='/computer' render={() => <ComputerContainer/> } /> */}
         {/* <ComputerContainer /> */}

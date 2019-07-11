@@ -132,7 +132,11 @@ export default class ComputerPage extends Component {
 
     favoriteComputer = (e) => {
         e.preventDefault()
+        let num = this.state.fav +1
         if(this.state.loggedin === true){
+        this.setState({
+            fav: num
+        })
         fetch(favoriteURL, {
             method: 'POST',
             headers: {

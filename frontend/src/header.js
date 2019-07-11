@@ -11,30 +11,31 @@ export default class Header extends Component {
     render(){
         return(
             <div class="headerBar">
+            <h1 className="WebsiteTitle" >SPECR</h1>
             <div className="navBar">
                 <Link to='/home'>
             <div className="NavBarBox">
-                    Home
+                    <a className="navtext" >Home</a>
                 </div>
                 </Link>
 
                 <Link to='/survey'>
                 <div className="NavBarBox">
-                    <a>Find your next computer</a>
+                    <a className="navtext" >Find your next computer</a>
                 </div>
                 </Link>
                 <Link to="/about">
                 <div className="NavBarBox">
-                    About
+                    <a className="navtext">About</a>
                 </div>
                 </Link>
-                {this.props.loggedIn ? <Link to="/favorites"> <div className="NavBarBox">Favorited Computers</div> </Link> : <Link to="/">
+                {this.props.loggedIn ? <Link to="/favorites"> <div className="NavBarBox"> <a className="navtext" > Favorited Computers </a> </div> </Link> : <Link to="/">
                 <div className="NavBarBox">
-                    Login
+                    <a className="navtext" >Login</a>
                 </div>
                 </Link>  }
 
-                {this.props.loggedIn ? <Link to="/home"> <div className="NavBarBox" onClick={this.props.logout} >Logout</div> </Link> : console.log("No") }
+                {this.props.loggedIn ? <Link to="/home"> <div className="NavBarBox" onClick={this.props.logout} ><a className="navtext"> Logout </a> </div> </Link> : console.log("No") }
                 {/* <Link to="/">
                 <div className="NavBarBox">
                     Login

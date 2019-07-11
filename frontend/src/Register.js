@@ -25,11 +25,11 @@ export default class Register extends Component {
                 Create an Account!
                 <div>
                     <form>
-                        Username: <div class="ui input focus"><input id="pants" type="text"></input></div>
-                        Password: <div class="ui input focus"><input id="shirt" type="password"></input></div>
-                        Confirm Password:<div class="ui input focus"><input id="corgi" type="password"></input></div>
-                        Name:<div class="ui input focus"><input id="bigbeans" type="text"></input></div>
-                        <Link to="/login"  ><div> <button class="ui inverted green button" type="submit" onClick={(e) => this.handleRegister(e)} >Create Account!</button> </div></Link>
+                        <a>Username:</a> <div class="ui input focus"><input id="pants" type="text"></input></div>
+                        <a>Password:</a> <div class="ui input focus"><input id="shirt" type="password"></input></div>
+                        <a>Confirm Password:</a> <div class="ui input focus"><input id="corgi" type="password"></input></div>
+                        <a>Name: </a><div class="ui input focus"><input id="bigbeans" type="text"></input></div>
+                        <Link to="/login"  ><div> <button class="ui inverted green button"  type="submit" onClick={(e) => this.handleRegister(e)} >Create Account!</button> </div></Link>
                     </form>
                 </div>
             </div>
