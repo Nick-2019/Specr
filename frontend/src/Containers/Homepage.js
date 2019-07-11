@@ -33,7 +33,8 @@ export default class Homepage extends Component{
 render(){
     return(
         <div>
-            <h1>SPECR</h1>
+            {/* <h1 className="WebsiteTitle" >SPECR</h1> */}
+            {this.props.login ? <h1>Welcome back, {localStorage.name}</h1> : console.log("Not Logged In")}
             <ComputerContainer computers={this.state.computers} />
         </div>
     )

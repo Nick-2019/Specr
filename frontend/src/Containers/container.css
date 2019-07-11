@@ -137,6 +137,17 @@
 
   }
 
+  .WebsiteTitle{
+      font-size: 82px;
+  }
+
+  div p {
+      font-size: 18px
+  }
+  /* .filterBoxes{
+      padding: 10px
+  } */
+
 /* .card{
     border: solid black 5px;
     padding: 30px;

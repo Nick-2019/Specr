@@ -6,21 +6,21 @@ export default class Container extends Component{
     render(){
         return(
             <div className="container">
-                <div>
-                    <select onChange={(e) => this.props.type(e)}>
+                <div className="filterBoxes">
+                    <select class="ui dropdown" onChange={(e) => this.props.type(e)}>
                         <option selected="selected" >Filter by computer type</option>
                         <option value="Desktop">Desktop</option>
                         <option value="Laptop">Laptop</option>
                         <option value="Tablet">Tablet</option>
                         <option value="All">All</option>
                     </select>
-                    <select onChange={(e) => this.props.cpu(e)}>
+                    <select class="ui dropdown" onChange={(e) => this.props.cpu(e)}>
                         <option selected="selected" >Filter by CPU brand</option>
                         <option value="Intel">Intel</option>
                         <option value="AMD">Amd</option>
                         <option value="All">All</option>
                     </select>
-                    <select onChange={(e) => this.props.os(e)}>
+                    <select class="ui dropdown" onChange={(e) => this.props.os(e)}>
                         <option selected="selected" >Filter by OS</option>
                         <option value="Windows 10">Windows</option>
                         <option value="Mac OS">Mac</option>

@@ -11,6 +11,7 @@ export default class Header extends Component {
     render(){
         return(
             <div class="headerBar">
+            <h1 className="WebsiteTitle" >SPECR</h1>
             <div className="navBar">
                 <Link to='/home'>
             <div className="NavBarBox">
