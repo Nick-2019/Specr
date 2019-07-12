@@ -18,7 +18,7 @@ export default class SurveyTemplate extends Component{
                 <h3>This ensures your suggestions will be more likely to give you a great experience!</h3>
 
 
-                <div className="surveyDiv" >What do you intend to primarily use this computer for? :
+                <div className="surveyDiv" ><p>What do you intend to primarily use this computer for? </p>
                 <select class="ui dropdown" >
                 <option disabled selected value>Select your use for this computer</option>
                     <option value='{"cpu":5,"gpu":2, "ram":8, "os": null}' >Engineering</option>
@@ -34,7 +34,7 @@ export default class SurveyTemplate extends Component{
                 </div>
                 <br></br>
                 <div className="surveyDiv">
-                If you intend to use this computer for gaming, how intense do you want the graphics to be?<select class="ui dropdown" >
+                <p>If you intend to use this computer for gaming, how intense do you want the graphics to be? </p><select class="ui dropdown" >
                 <option disabled selected value value="null" >Select Gaming preferences</option>
                     <option value='{"gpu":1}'>Low</option>
                     <option value='{"gpu":1}'>Medium</option>
@@ -48,7 +48,7 @@ export default class SurveyTemplate extends Component{
 
 
                 <div className="surveyDiv">
-               Do you intend to use this computer for School?<select class="ui dropdown" >
+               <p> Do you intend to use this computer for School? </p><select class="ui dropdown" >
                 <option disabled selected value value="null" >Education Use</option>
                     <option value="null">Yes</option>
                     <option value="null">No</option>
@@ -58,7 +58,7 @@ export default class SurveyTemplate extends Component{
 
                 <br></br>
                 <div className="surveyDiv">
-                Do you intend to use this computer for streaming to websites like Twitch?<select class="ui dropdown" >
+                <p>Do you intend to use this computer for streaming to websites like Twitch? </p><select class="ui dropdown" >
                 <option disabled selected value value="null" >Streaming</option>
                     <option value='{"gpu":4}'>Yes</option>
                     <option value="null" >No</option>
@@ -67,7 +67,7 @@ export default class SurveyTemplate extends Component{
                 <br></br>
 
                 <div className="surveyDiv">
-                Do you intend to use this computer for a buisness/startup?<select class="ui dropdown" >
+                <p>Do you intend to use this computer for a buisness/startup? </p><select class="ui dropdown" >
                 <option disabled selected value>Y/N</option>
                     <option value="Intel" >Yes</option>
                     <option value="null">No</option>
@@ -75,7 +75,7 @@ export default class SurveyTemplate extends Component{
                 </div>
                 <br></br>
                 <div className="surveyDiv">
-                How many web browser tabs do you tend to keep open?<select class="ui dropdown" >
+                <p>How many web browser tabs do you tend to keep open?</p> <select class="ui dropdown" >
                 <option disabled selected value>Tabs</option>
                     <option>1-3</option>
                     <option>4-6</option>

@@ -12,7 +12,7 @@ export default class ComputerContainer extends Component {
 render(){
     return(
         <div>
-            <h1>
+            <h1 className="welcomename" >
             Computers:
             </h1>
             {this.props.computers.map(computer => <ComputerCard comp={computer} />)}
@@ -20,3 +20,4 @@ render(){
     )
 }
 }
+
