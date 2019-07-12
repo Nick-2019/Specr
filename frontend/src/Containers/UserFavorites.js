@@ -69,7 +69,7 @@ export default class UserFavs extends Component {
 
         return(
             <div>
-                {this.props.login ? "Your Favorited Computers": "Users must be logged in to view favorites"}
+                {this.props.login ? console.log("Display") : "Users must be logged in to view favorites"}
                 {this.state.isLoading ?  console.log("FUCK") : <FavContainer computers={this.state.computers} joiners={this.state.joiner} />}
             </div>
         )

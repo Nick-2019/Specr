@@ -42,6 +42,10 @@
     
   }
   
+  .welcomename{
+      color:white
+  }
+  
   .NavBarBox{
     display: inline-block;
     border: solid black;
@@ -51,7 +55,7 @@
     vertical-align: top;
     padding: 20px;
     margin: 10px;
-    background-color: #6699CC;
+    background-color: white;
     border-radius: 12%;
     box-shadow: 5px 5px black;
     
@@ -151,10 +155,12 @@
 
   .WebsiteTitle{
       font-size: 82px;
+      color: white
   }
 
   div p {
-      font-size: 18px
+      font-size: 20px;
+      color: #39ff14
   }
   /* .filterBoxes{
       padding: 10px

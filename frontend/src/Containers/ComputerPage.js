@@ -173,7 +173,7 @@ render(){
                 <p>
                     {this.state.fav} people have favorited this computer
                 </p>
-                <button type="submit" class="ui button" onClick={(e) => this.favoriteComputer(e)}><i class="heart icon" ></i> Favorite this computer</button>
+                <button type="submit" class="ui red button" onClick={(e) => this.favoriteComputer(e)}><i class="heart icon" ></i> Favorite this computer</button>
             </div>
             {/* <div className="saveFav">
             <div class="ui labeled button" tabindex="0">
